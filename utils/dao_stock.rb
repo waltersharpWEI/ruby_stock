@@ -52,7 +52,18 @@ class Stock
         break
       end
     end
-    saveStock()
+    return 0
+  end
+
+  def buyGood(name,number)
+    for good in @json_handle['things']
+      if good['name'] == name
+        temp = Integer(good['number'])
+        temp += number
+        good['number'] = temp.to_s
+        break
+      end
+    end
     return 0
   end
 
@@ -60,4 +71,5 @@ class Stock
     temp_str = @json_handle.to_json
     File.write(@path_to_json, temp_str)
   end
+
 end

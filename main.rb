@@ -3,15 +3,14 @@
 require_relative 'utils/dao_stock.rb'
 
 stock1 = Stock.new('data/stock.json',0)
-stock1.printStock()
-stock1.sellGood('Apple', 1)
-stock1.printStock()
-puts stock1.getPathToJson() 
-stock1.setPathToJson('data/stock1.json')
-puts stock1.getPathToJson()
-stock1.printStock()
-stock1.setOpCount(2)
-puts stock1.getOpCount()
-stock1.saveStock()
+
+while true 
+  for i in 1..100000000 
+    stock1.buyGood('Apple', 15)
+    stock1.buyGood('Orange', 8)
+    stock1.sellGood('Apple', 6)
+    stock1.saveStock()
+  end
+end
 
 
