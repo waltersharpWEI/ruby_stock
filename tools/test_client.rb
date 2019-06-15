@@ -18,7 +18,7 @@ begin
 	ar.number = 10
 	
 	# Run a remote calculation
-	result = client.sell_good(ar)  #it accessing the ruby server program method calc via thrift service
+        result = client.sell_good(ar) while TRUE #it accessing the ruby server program method calc via thrift service
 	puts result.inspect
 	
 	transport.close()

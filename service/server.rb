@@ -16,7 +16,7 @@ class RemoteStockHandler
   end
 
   def buy_good(op)
-    @stock.bullGood(op.name,op.number)
+    @stock.buyGood(op.name,op.number)
     @stock.saveStock()
     return 0
   end
